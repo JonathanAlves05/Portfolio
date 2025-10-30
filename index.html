@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Meu Portfólio - Minimalista e Moderno</title>
+
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Inter) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Configuração do Tailwind (Dark Mode) --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // 4. Fonte principal, como definido no prompt
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // 3. Paleta de Cores (Dark Mode)
+                        'brand-dark-bg': '#1a1a1a', // Fundo escuro
+                        'brand-light-primary': '#e0e0e0', // Texto principal claro
+                        'brand-light-secondary': '#b0b0b0', // Texto secundário
+                        'brand-accent': '#00C0FF', // Azul
+                    } 
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 3. Fundo Dark Mode */
+        body {
+            background-color: #1a1a1a;
+        }
+
+        /* 6. Elemento "Doodle" (Sublinhado) - Corrigido para Azul */
+        .doodle-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .doodle-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            /* Corrigido para #00C0FF (Azul) */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6.99988C15.8258 2.43657 41.1333 -2.25139 63.5 4.49988C78.3392 8.9412 89.2821 5.99619 100 3.99988' stroke='%2300C0FF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 8px;
+            transform: scaleX(1.1); /* Ligeiramente mais largo que o texto */
+        }
+
+        /* 6. Elemento "Doodle" (Seta) - Corrigido para Azul */
+        .doodle-arrow {
+            position: relative;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .doodle-arrow:hover {
+            transform: translateX(5px);
+        }
+        .doodle-arrow::after {
+            content: '';
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 20px;
+            /* Corrigido para #00C0FF (Azul) */
+            background-image: url("data:image/svg+xml,%3Csvg width='30' height='20' viewBox='0 0 30 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 10H28.5M28.5 10L19.5 1M28.5 10L19.5 19' stroke='%2300C0FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark-bg text-brand-light-primary font-sans antialiased">
+
+    <!-- Wrapper com padding reduzido (py-2) -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+
+        <!-- 7. NAVEGAÇÃO com padding reduzido (py-3) -->
+        <header class="flex justify-between items-center py-3">
+            <!-- Logotipo / Nome --><div class="text-xl font-black text-white hover:text-brand-accent transition-colors">
+                Jonathan Alves
+            </div>
+
+            <!-- Navegação com estilo de botões --><nav>
+                <ul class="flex space-x-4 sm:space-x-6 items-center">
+                    <li><a href="#inicio" class="font-bold text-brand-light-primary hover:text-brand-accent transition-colors">Início</a></li>
+                    <li><a href="#projetos" class="font-bold text-brand-light-primary hover:text-brand-accent transition-colors">Projetos</a></li>
+                    <li><a href="#sobre" class="font-bold text-brand-light-primary hover:text-brand-accent transition-colors">Sobre</a></li>
+                    <li><a href="#contacto" class="font-bold text-brand-light-primary hover:text-brand-accent transition-colors">Contatos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- SECÇÃO "HERO" com altura e padding ajustados -->
+            <section id="inicio" class="min-h-[calc(100vh_-_80px)] grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-8 sm:py-12">
+                <!-- Coluna de Texto --><div class="text-center md:text-left">
+                    <!-- 4. Títulos (Headings) Grandes - TAMANHO REDUZIDO --><h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+                        Olá! Me chamo Jonathan Alves,
+                        <span class="block">trabalho com desenvolvimento e automação.</span>
+                        
+                        <span class="doodle-underline text-brand-accent">Conheça mais</span>
+                        sobre mim.
+                    </h1>
+
+                    
+                    <!-- 6. Botão (CTA) --><a href="#projetos" 
+                       class="doodle-arrow mt-12 inline-block bg-brand-accent text-brand-dark-bg text-lg font-black py-4 px-8 rounded-lg shadow-lg hover:bg-white transition-colors duration-300">
+                        Veja os meus projetos
+                    </a>
+                </div>
+                
+                <!-- Coluna de Imagem - Corrigida para Azul --><div class="flex items-center justify-center">
+                    <img src="https://placehold.co/600x600/1a1a1a/00C0FF?text=Ilustração+Aqui" 
+                         alt="Ilustração ou foto de [Seu Nome]" 
+                         class="rounded-lg w-full max-w-md object-cover shadow-xl">
+                </div>
+            </section>
+            <!-- FIM DA SECÇÃO MODIFICADA --><!-- 5. SECÇÃO DE PROJETOS --><section id="projetos" class="py-20 sm:py-32">
+                <h2 class="text-4xl sm:text-5xl font-black text-white text-center mb-4">Projetos Selecionados</h2>
+                <p class="text-xl text-brand-light-secondary text-center mb-12">Uma coleção de trabalhos recentes que tive o prazer de criar.</p>
+
+                <!-- Grelha (Grid) de Projetos --><div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                    <!-- Projeto 1 --><article class="group">
+                        <div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl border border-gray-700">
+                            <!-- Placeholder de Imagem --><img src="imgProjetos/barbearia.png" 
+                                 alt="Imagem de placeholder para o Projeto 1" 
+                                 class="w-full h-64 object-cover">
+                            
+                              <div class="p-6">
+                                <h3 class="text-2xl font-bold text-white mb-2">Emerson Barbearia</h3>
+                                
+                                <!-- DESCRIÇÃO ATUALIZADA -->
+                                <p class="text-brand-light-secondary mb-4">Desenvolvi a landing page para a Emerson Barbearia. O projeto é um site de página única focado em converter visitantes em clientes, apresentando a marca, os serviços com preços, formas de contato e também agendamento direto no site</p>
+                                
+                                <!-- TECNOLOGIAS ATUALIZADAS -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">HTML5</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">CSS3</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">JavaScript</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">UI/UX Design</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Design Responsivo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 2 --><article class="group">
+                        <div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl border border-gray-700">
+                            <!-- Placeholder de Imagem --><img src="imgProjetos/doceria.png" 
+                                 alt="Imagem de placeholder para o Projeto 2" 
+                                 class="w-full h-64 object-cover">
+                      <div class="p-6">
+                                <h3 class="text-2xl font-bold text-white mb-2">Doceria Dois Amores</h3>
+                                
+                                <!-- DESCRIÇÃO ATUALIZADA -->
+                                <p class="text-brand-light-secondary mb-4">Essa página web foi criada com o objetivo de divulgar os produtos da doceria e realizar um atentimento virtual em uma conversa com agente de IA.</p>
+                                
+                                <!-- TECNOLOGIAS ATUALIZADAS -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">HTML5</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">CSS3</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">JavaScript</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">N8n (Automação)</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Design Responsivo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 3 (Pode adicionar mais) --><article class="group">
+                        <div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl border border-gray-700">
+                            <!-- Placeholder de Imagem --><img src="imgProjetos/nutriplus.png" 
+                                 alt="Imagem de placeholder para o Projeto 3" 
+                                 class="w-full h-64 object-cover">
+                            
+                          <div class="p-6">
+                                <h3 class="text-2xl font-bold text-white mb-2">NutriPlus Web</h3>
+                                <!-- DESCRIÇÃO ATUALIZADA -->
+                                <p class="text-brand-light-secondary mb-4">A pagina web foi criada para apresentar o novo aplicativo do curso de nutrição. É uma landing page que destaca funcionalidades como controle de estoque, cálculo de custos e gestão de cardápios.</p>
+                                <!-- TECNOLOGIAS ATUALIZADAS -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">HTML5</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">CSS3</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">JavaScript</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Design Responsivo</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Netlify (Hosting)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Projeto 4 (Pode adicionar mais) --><article class="group">
+                        <div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl border border-gray-700">
+                            <!-- Placeholder de Imagem --><img src="imgProjetos/CRUD.png" 
+                                 alt="Imagem de placeholder para o Projeto 4" 
+                                 class="w-full h-64 object-cover">
+                            
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-white mb-2">Pets CRUD</h3>
+                                <!-- DESCRIÇÃO ATUALIZADA -->
+                                <p class="text-brand-light-secondary mb-4">Uma aplicação web full-stack criada para gerenciar o registro de pets. Utiliza PHP para o backend, permitindo criar, ler, atualizar e deletar (CRUD) registos de animais em um banco de dados SQL.</p>
+                                <!-- TECNOLOGIAS ATUALIZADAS -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">PHP</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">HTML5</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">SQL</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Full Stack</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">CSS3</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </article><!-- Projeto 4 (Pode adicionar mais) --><article class="group">
+                        <div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl border border-gray-700">
+                            <!-- Placeholder de Imagem --><img src="imgProjetos/app.jpg" 
+                                 alt="Imagem de placeholder para o Projeto 4" 
+                                 class="w-full h-64 object-cover">
+                            
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-white mb-2">App NutriPlus (Android)</h3>
+                                <!-- DESCRIÇÃO ATUALIZADA -->
+                                <p class="text-brand-light-secondary mb-4">Projeto acadêmico focado em aplicar um processo de engenharia de software para resolver um problema real: a automação de cálculos de custos e estoque para o curso de nutrição. O processo incluiu prototipagem no Figma e modelagem UML, seguindo metodologias ágeis (Scrum/Kanban). O resultado foi um aplicativo nativo para Android, desenvolvido em Java, que substitui planilhas complexas por uma ferramenta simples e funcional.</p>
+                                <!-- TECNOLOGIAS ATUALIZADAS -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Android Studio</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Java</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Desenvolvimento Mobile</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Figma</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">UML</span>
+                                    <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Metodologias Ágeis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div> <!-- Fim da Grelha --></section>
+
+            <!-- SECÇÃO SOBRE --><section id="sobre" class="py-20 sm:py-32">
+                <!-- MODIFICADO: Removido 'text-center' do wrapper principal para permitir alinhamento do texto à esquerda -->
+                <div class="max-w-3xl mx-auto px-4">
+
+                    <!-- FOTO DE PERFIL (Mantida) -->
+                    <img src="https://placehold.co/192x192/00C0FF/1a1a1a?text=Sua+Foto" 
+                         alt="Uma foto de Jonathan Alves"
+                         class="w-48 h-48 rounded-full mx-auto mb-10 border-4 border-brand-accent object-cover shadow">
+                    
+                    <!-- TÍTULO (Mantido text-center) -->
+                    <h2 class="text-4xl sm:text-5xl font-black text-white mb-12 text-center">Sobre mim</h2>
+                    
+                    <!-- MODIFICADO: Container de conteúdo reestruturado com alinhamento à esquerda -->
+                    <div class="space-y-12">
+                        
+                        <!-- 1. Resumo -->
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-4 text-left">Resumo</h3>
+                            <p class="text-xl text-brand-light-secondary text-left leading-relaxed">
+                               Sou formado como Técnico em Desenvolvimento de Sistemas pela ETEC e atualmente curso Análise e Desenvolvimento de Sistemas. Possuo experiência prática no desenvolvimento web, mobile e automações com N8N.
+                               Atualmente atuo em estágio onde sou responsável pela manutenção de máquinas, incluindo formatação e configuração de sistemas operacionais, e auxilio na administração de ambientes e no suporte técnico a usuários.
+                            </p>
+                        </div>
+
+                        <!-- 2. Hard Skills -->
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-4 text-left">Hard Skills</h3>
+                            <div class="flex flex-wrap gap-3 justify-start">
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">JavaScript</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">React</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Node.js</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">N8N</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Java</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">PHP</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Angular</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Spring Boot</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">AWS/Azure</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Manutenção de Hardware</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Scrum</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Kanban</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. Soft Skills -->
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-4 text-left">Soft Skills</h3>
+                            <div class="flex flex-wrap gap-3 justify-start">
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Trabalho em Equipe</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Comunicação</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Adaptabilidade</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Trabalho Sob Pressão</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Criatividade</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Pensamento Crítico</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Empatia</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Liderança</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Resiliência</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Proatividade</span>
+                                <span class="inline-block bg-gray-700 text-brand-light-primary text-sm font-bold py-2 px-4 rounded-full">Resolução de Problemas</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 4. Idiomas -->
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-4 text-left">Idiomas</h3>
+                            <div class="text-xl text-brand-light-secondary text-left">
+                                <p><strong class="text-brand-light-primary">Português:</strong> Nativo</p>
+                                <p><strong class="text-brand-light-primary">Inglês:</strong> Técnico (Leitura e Escrita)</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section id="contacto" class="py-20 sm:py-32 text-center">
+                <h2 class="text-4xl sm:text-5xl font-black text-white mb-4">Tem uma ideia?</h2>
+                <p class="text-2xl text-brand-light-secondary mb-16 max-w-2xl mx-auto">
+                    Estou sempre aberto a novos projetos, colaborações ou apenas a uma conversa sobre desenvolvimento e automação.
+                </p>
+
+                <!-- Nova Grelha de Contacto Atrativa -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    
+                    <!-- 1. GitHub -->
+                    <a href="https://github.com/JonathanAlves05"
+                       target="_blank" rel="noopener noreferrer"
+                       class="group flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg shadow border border-gray-700 transition-colors duration-300 hover:bg-brand-accent">
+                        <!-- Ícone SVG para GitHub -->
+                        <svg class="w-12 h-12 text-brand-accent transition-colors duration-300 group-hover:text-brand-dark-bg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg>
+                        <span class="mt-4 text-xl font-bold text-white transition-colors duration-300 group-hover:text-brand-dark-bg">GitHub</span>
+                        <!-- MODIFICADO: Removido 'break-all' e adicionado 'text-sm' -->
+                        <span class="mt-1 text-brand-light-secondary transition-colors duration-300 group-hover:text-brand-dark-bg text-sm">JonathanAlves05</span>
+                    </a>
+
+                    <!-- 2. LinkedIn -->
+                    <a href="https://www.linkedin.com/in/jonathanalvess"
+                       target="_blank" rel="noopener noreferrer"
+                       class="group flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg shadow border border-gray-700 transition-colors duration-300 hover:bg-brand-accent">
+                        <!-- Ícone SVG para LinkedIn -->
+                        <svg class="w-12 h-12 text-brand-accent transition-colors duration-300 group-hover:text-brand-dark-bg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                        <span class="mt-4 text-xl font-bold text-white transition-colors duration-300 group-hover:text-brand-dark-bg">LinkedIn</span>
+                        <span class="mt-1 text-brand-light-secondary transition-colors duration-300 group-hover:text-brand-dark-bg">Jonathan Alves</span>
+                    </a>
+
+                    <!-- 3. Email -->
+                    <a href="mailto:jarprodrigues05@gmail.com"
+                       class="group flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg shadow border border-gray-700 transition-colors duration-300 hover:bg-brand-accent">
+                        <!-- Ícone SVG para Email -->
+                        <svg class="w-12 h-12 text-brand-accent transition-colors duration-300 group-hover:text-brand-dark-bg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="mt-4 text-xl font-bold text-white transition-colors duration-300 group-hover:text-brand-dark-bg">Email</span>
+                        <!-- MODIFICADO: Removido 'break-all' e adicionado 'text-sm' -->
+                        <span class="mt-1 text-brand-light-secondary transition-colors duration-300 group-hover:text-brand-dark-bg text-sm">jarprodrigues05@gmail.com</span>
+                    </a>
+
+                    <!-- 4. Telefone -->
+                    <a href="##"
+                       class="group flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg shadow border border-gray-700 transition-colors duration-300 hover:bg-brand-accent">
+                        <!-- Ícone SVG para Telefone -->
+                        <svg class="w-12 h-12 text-brand-accent transition-colors duration-300 group-hover:text-brand-dark-bg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18h.01m-6.01 0h.01M7 18h.01M18 6.62a2.25 2.25 0 00-1.88-2.06c-.13-.02-.26-.03-.39-.03H7.27a2.25 2.25 0 00-2.17 1.81c-.02.13-.03.26-.03.39V17.2a2.25 2.25 0 002.2 2.23c.13.02.26.03.39.03h8.06a2.25 2.25 0 002.2-2.23c.02-.13.03-.26.03-.39V6.62zM12 16a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                        <span class="mt-4 text-xl font-bold text-white transition-colors duration-300 group-hover:text-brand-dark-bg">Telefone</span>
+                        <!-- MODIFICADO: Adicionado 'text-sm' para consistência -->
+                        <span class="mt-1 text-brand-light-secondary transition-colors duration-300 group-hover:text-brand-dark-bg text-sm">+55 (11) 98757-6916</span>
+                    </a>
+
+                </div>
+                <!-- Fim da Grelha de Contacto -->
+            </section>
+        </main>
+
+        <!-- RODAPÉ --><footer class="py-10 mt-20 border-t border-gray-700 text-center">
+            <p class="text-brand-light-secondary">  
+                Construído por Jonathan Alves.
+            </p>
+        </footer>
+
+    </div>
+</body> 
